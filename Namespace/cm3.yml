@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm3
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Hello from ConfigMap!</h1>
+      <p>This is my custom data.</p>
+    </body>
+    </html>
+  
