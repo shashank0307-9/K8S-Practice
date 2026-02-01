@@ -1,0 +1,22 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: mydp
+spec:
+  selector:
+    matchLabels:
+      app: swiggy
+  replicas: 2
+  template:
+    metadata: 
+      name: mytemp
+      labels:
+        app: swiggy
+    spec:
+      containers:
+        - name: cont1
+          image: nginx
+
+          
