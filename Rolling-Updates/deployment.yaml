@@ -1,0 +1,27 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydp1
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: ball
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata: 
+      name: mytemp
+      labels:
+        app: ball    
+    spec:
+      containers:
+      - name: cont1
+        image: httpd
+        ports:
+        - containerPort: 80     

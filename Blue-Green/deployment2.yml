@@ -1,0 +1,21 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: mydp3
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: game
+  template:
+    metadata:
+      labels:
+        app: game
+    spec: 
+      containers:
+      - name: mycont2
+        image: shaikmustafa/mygame
+        ports:
+        - containerPort: 80    

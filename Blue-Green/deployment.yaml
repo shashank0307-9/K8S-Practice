@@ -1,0 +1,21 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: mydp2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: car
+  template:
+    metadata:
+      labels:
+        app: car
+    spec: 
+      containers:
+      - name: mycont2
+        image: shaikmustafa/cycle
+        ports:
+        - containerPort: 80    
